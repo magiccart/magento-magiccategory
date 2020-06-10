@@ -6,7 +6,7 @@
  * @license   http://www.magiccart.net/license-agreement.html
  * @Author: Magiccart<team.magiccart@gmail.com>
  * @@Create Date: 2014-09-10 10:21:05
- * @@Modify Date: 2016-10-18 10:21:52
+ * @@Modify Date: 2020-06-10 10:21:52
  * @@Function:
  */
 
@@ -35,7 +35,7 @@ class Magiccart_Magiccategory_Block_Adminhtml_Manage_Edit_Tab_Gallery extends Ma
             );
 
             $this->getUploader()->getConfig()
-                ->setUrl(Mage::getModel('adminhtml/url')->addSessionParam()->getUrl('*/*/upload'))
+                ->setUrl(Mage::getModel('adminhtml/url')->getUrl('*/*/upload'))
                 ->setFileField('image')
                 ->setFilters(array(
                     'images' => array(
@@ -50,7 +50,7 @@ class Magiccart_Magiccategory_Block_Adminhtml_Manage_Edit_Tab_Gallery extends Ma
 
             $this->getUploader()->getUploaderConfig()
                 ->setFileParameterName('image')
-                ->setTarget(Mage::getModel('adminhtml/url')->addSessionParam()->getUrl('*/*/upload'));
+                ->setTarget(Mage::getModel('adminhtml/url')->getUrl('*/*/upload'));
 
             $browseConfig = $this->getUploader()->getButtonConfig();
             $browseConfig->setAttributes(array(
